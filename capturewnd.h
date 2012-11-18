@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QImage>
+#include <QMutex>
 
 #include <string>
 
@@ -21,6 +22,8 @@ namespace smartPhotoBox {
 
 	private:
 		QImage liveImage;
+		unsigned char *frame;
+		int max_frame_size;
 		std::string underlyingImageFilename;
 	};
 }
