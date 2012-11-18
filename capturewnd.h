@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QImage>
 
+#include <string>
+
 namespace smartPhotoBox {
 	class CaptureWnd: public QWidget
 	{
@@ -11,12 +13,15 @@ namespace smartPhotoBox {
 		CaptureWnd(QWidget *parent);
 		~CaptureWnd();
 
+		void setUnderlyingImageFilename(std::string filename);
+
 	protected:
 		virtual void paintEvent(QPaintEvent *event);
-		virtual void closeEvent(QCloseEvent *event);
+		virtual void customEvent(QEvent *event);	
 
 	private:
 		QImage liveImage;
+		std::string underlyingImageFilename;
 	};
 }
 
