@@ -1,4 +1,6 @@
 #include "capturewnd.h"
+
+#include "buffer.h"
 #include "events.h"
 
 #include <QPainter>
